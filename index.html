@@ -310,8 +310,7 @@ const sbHeaders = {
 };
 
 async function sbSelect(table){
-  const bust = '_=' + Date.now();
-  const r = await fetch(SUPABASE_URL + '/rest/v1/' + table + '?select=*&limit=10000&' + bust, {
+  const r = await fetch(SUPABASE_URL + '/rest/v1/' + table + '?select=*&limit=10000', {
     cache: 'no-store',
     headers: Object.assign({}, sbHeaders, {'Cache-Control': 'no-cache, no-store', 'Pragma': 'no-cache'})
   });
